@@ -2,6 +2,14 @@
 
 A quiet, monochrome interface theme with one configurable accent color, automatic dark mode, and no dependencies. Inspired by the restrained spacing and hierarchy of modern business software; not affiliated with Apple.
 
+## Screenshots
+
+| Dashboard · light | Dashboard · dark |
+| --- | --- |
+| ![Business Casual dashboard in light mode](screenshots/dashboard-light.png) | ![Business Casual dashboard in dark mode](screenshots/dashboard-dark.png) |
+
+![Business Casual component gallery showing the introductory guide and button styles](screenshots/components-light.png)
+
 ## Use in another project
 
 Copy **`styles/business-casual.css`** into your project and load it after your base styles. The other files are only for the dashboard and component-gallery demos.
