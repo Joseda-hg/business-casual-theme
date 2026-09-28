@@ -1,0 +1,30 @@
+{
+  "name": "business-casual-theme",
+  "version": "0.1.0",
+  "description": "A quiet, monochrome interface theme with one configurable accent color.",
+  "license": "MIT",
+  "keywords": ["css", "theme", "design-system", "dark-mode", "components"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joseda-hg/business-casual-theme.git"
+  },
+  "homepage": "https://github.com/Joseda-hg/business-casual-theme#readme",
+  "bugs": "https://github.com/Joseda-hg/business-casual-theme/issues",
+  "type": "module",
+  "style": "./dist/business-casual.css",
+  "publishConfig": { "access": "public" },
+  "files": ["dist"],
+  "exports": {
+    ".": "./dist/business-casual.css",
+    "./business-casual.css": "./dist/business-casual.css",
+    "./business-casual-manrope.css": "./dist/business-casual-manrope.css",
+    "./business-casual-table.js": "./dist/business-casual-table.js",
+    "./fonts/*": "./dist/fonts/*"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepack": "npm run build",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" }
+}

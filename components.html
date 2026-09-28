@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Components — Business Casual</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23191b20'/%3E%3Ctext x='12' y='47' font-family='Arial' font-size='44' font-weight='bold' fill='white'%3Eb.%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles/business-casual.css">
+  <link rel="stylesheet" href="styles/business-casual-manrope.css">
+  <link rel="stylesheet" href="components.css">
+  <script src="scripts/business-casual-table.js" defer></script>
+  <script src="components.js" defer></script>
+</head>
+<body class="bc">
+  <header class="gallery-header"><a class="gallery-brand" href="index.html"><span class="gallery-mark">b.</span> business casual <span class="bc-badge">Components</span></a><div class="gallery-actions"><a class="bc-button bc-button--quiet" href="index.html">← Dashboard</a><button class="bc-button" id="gallery-font" type="button" aria-label="Switch to Manrope font">Manrope font</button><button class="bc-button" id="gallery-theme" type="button" aria-label="Switch to dark mode">Dark mode</button></div></header>
+  <div class="gallery-shell">
+    <nav class="gallery-nav" aria-label="Component sections"><p class="bc-eyebrow">Foundation</p><a href="#getting-started">Getting started</a><p class="bc-eyebrow">Components</p><a href="#buttons">Buttons</a><a href="#forms">Form controls</a><a href="#surfaces">Cards & feedback</a><a href="#navigation">Navigation</a><a href="#data">Data & empty states</a><a href="#dialog">Dialog</a></nav>
+    <main class="gallery-main">
+      <section id="getting-started" class="gallery-intro"><span class="bc-eyebrow">The essentials</span><h1 class="bc-h1">Components, without the baggage.</h1><p class="bc-muted">Native HTML, a few predictable classes, and one accent color. Copy the stylesheet; use these patterns anywhere.</p><div class="intro-links"><a class="bc-button bc-button--primary" href="#buttons">Browse components</a><a class="bc-button" href="README.md">Read the guide</a></div><pre><code>&lt;link rel="stylesheet" href="business-casual.css"&gt;
+&lt;main class="bc"&gt;
+  &lt;button class="bc-button bc-button--primary"&gt;Continue&lt;/button&gt;
+&lt;/main&gt;</code></pre></section>
+
+      <section id="buttons" class="gallery-section"><div class="section-title"><div><span class="bc-eyebrow">01 / Actions</span><h2 class="bc-h2">Buttons</h2></div><code>bc-button</code></div><div class="sample"><div class="sample-row"><button class="bc-button bc-button--primary">Primary action</button><button class="bc-button">Secondary</button><button class="bc-button bc-button--quiet">Quiet action</button><button class="bc-button" disabled>Disabled</button></div><div class="sample-row" style="margin-top:16px"><button class="bc-button bc-button--danger">Delete project</button><button class="bc-button bc-button--warning">Review changes</button></div><p class="bc-caption">Primary follows your accent (charcoal by default). Reserve danger for destructive actions and warning for actions needing caution.</p></div><pre><code>&lt;button class="bc-button bc-button--primary"&gt;Save changes&lt;/button&gt;
+&lt;button class="bc-button bc-button--danger"&gt;Delete project&lt;/button&gt;
+&lt;button class="bc-button bc-button--warning"&gt;Review changes&lt;/button&gt;</code></pre></section>
+
+      <section id="forms" class="gallery-section"><div class="section-title"><div><span class="bc-eyebrow">02 / Input</span><h2 class="bc-h2">Form controls</h2></div><code>bc-field</code></div><div class="sample"><div class="form-grid"><label class="bc-field"><span class="bc-label">Project name</span><input class="bc-input" placeholder="Enter a name" autocomplete="off"><span class="bc-hint">A short, memorable name works best.</span></label><label class="bc-field"><span class="bc-label">Category</span><select class="bc-select"><option>Choose a category</option><option>Design</option><option>Operations</option></select></label><label class="bc-field full-width"><span class="bc-label">Description</span><textarea class="bc-input bc-textarea" placeholder="What are you working on?"></textarea></label></div><div class="sample-row form-options"><label class="bc-check"><input type="checkbox" checked> Send me updates</label><label class="bc-check"><input type="radio" name="priority" checked> Standard</label><label class="bc-check"><input type="radio" name="priority"> Priority</label><label class="bc-switch"><input type="checkbox" checked><span class="bc-switch-track" aria-hidden="true"></span> Public project</label></div></div><pre><code>&lt;label class="bc-field"&gt;
+  &lt;span class="bc-label"&gt;Email&lt;/span&gt;
+  &lt;input class="bc-input" type="email" required&gt;
+  &lt;span class="bc-hint"&gt;We'll only use this to contact you.&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="bc-switch"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="bc-switch-track" aria-hidden="true"&gt;&lt;/span&gt; Notifications
+&lt;/label&gt;</code></pre></section>
+
+      <section id="surfaces" class="gallery-section"><div class="section-title"><div><span class="bc-eyebrow">03 / Structure</span><h2 class="bc-h2">Cards & feedback</h2></div><code>bc-card · bc-alert</code></div><div class="sample"><div class="surface-grid"><article class="bc-card sample-card"><span class="bc-badge bc-badge--accent">In progress</span><h3 class="bc-h3">A focused place to work</h3><p class="bc-muted">Cards group related information without adding noise.</p><a class="bc-link" href="#surfaces">View details →</a></article><article class="bc-card bc-card--flat sample-card"><span class="bc-avatar bc-avatar--accent">AC</span><h3 class="bc-h3">Keep things simple</h3><p class="bc-muted">Use the flat modifier when elevation isn't needed.</p><span class="bc-badge">Draft</span></article></div><div class="alert-stack"><div class="bc-alert bc-alert--accent" role="status"><span class="bc-alert-icon" aria-hidden="true">✦</span><div><strong class="bc-alert-title">Changes saved</strong><p>Your workspace is up to date.</p></div></div><div class="bc-alert" role="note"><span class="bc-alert-icon" aria-hidden="true">ⓘ</span><div><strong class="bc-alert-title">Good to know</strong><p>You can revisit these settings at any time.</p></div></div></div></div><pre><code>&lt;article class="bc-card"&gt;...&lt;/article&gt;
+&lt;div class="bc-alert bc-alert--accent" role="status"&gt;
+  &lt;div&gt;&lt;strong class="bc-alert-title"&gt;Saved&lt;/strong&gt;
+    &lt;p&gt;Your changes are ready.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre></section>
+
+      <section id="navigation" class="gallery-section"><div class="section-title"><div><span class="bc-eyebrow">04 / Orientation</span><h2 class="bc-h2">Navigation</h2></div><code>bc-tabs · bc-segmented</code></div><div class="sample"><div class="bc-tabs" role="tablist" aria-label="Example views"><button class="bc-tab" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true" tabindex="0">Overview</button><button class="bc-tab" type="button" role="tab" id="tab-activity" aria-controls="panel-activity" aria-selected="false" tabindex="-1">Activity</button><button class="bc-tab" type="button" role="tab" id="tab-settings" aria-controls="panel-settings" aria-selected="false" tabindex="-1">Settings</button></div><div class="tab-content" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">A quick look at what's happening.</div><div class="tab-content" id="panel-activity" role="tabpanel" aria-labelledby="tab-activity" hidden>Your recent updates appear here.</div><div class="tab-content" id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" hidden>Preferences for this space appear here.</div><div class="bc-segmented" role="group" aria-label="Example density"><button type="button" aria-pressed="true">Comfortable</button><button type="button" aria-pressed="false">Compact</button></div></div><pre><code>&lt;div class="bc-segmented" role="group" aria-label="Display density"&gt;
+  &lt;button type="button" aria-pressed="true"&gt;Comfortable&lt;/button&gt;
+  &lt;button type="button" aria-pressed="false"&gt;Compact&lt;/button&gt;
+&lt;/div&gt;</code></pre></section>
+
+      <section id="data" class="gallery-section"><div class="section-title"><div><span class="bc-eyebrow">05 / Content</span><h2 class="bc-h2">Data & empty states</h2></div><code>bc-table · bc-empty</code></div><div class="sample"><div class="bc-table-toolbar"><label class="bc-search"><span aria-hidden="true">⌕</span><input class="bc-input" type="search" placeholder="Search projects" aria-label="Search projects" data-bc-table-search="project-table"></label><span class="bc-caption" data-bc-table-count="project-table" aria-live="polite"></span></div><div class="bc-table-wrap"><table class="bc-table" id="project-table" data-bc-table><thead><tr><th scope="col"><button class="bc-table-sort" type="button">Project</button></th><th scope="col"><button class="bc-table-sort" type="button">Owner</button></th><th scope="col"><button class="bc-table-sort" type="button">Status</button></th><th scope="col" data-bc-sort-type="date"><button class="bc-table-sort" type="button">Updated</button></th></tr></thead><tbody><tr><td>Brand guidelines</td><td>Alex Carter</td><td><span class="bc-badge bc-badge--accent">Active</span></td><td data-sort-value="2026-09-25">Today</td></tr><tr><td>Autumn campaign</td><td>Maya Kim</td><td><span class="bc-badge">Draft</span></td><td data-sort-value="2026-09-24">Yesterday</td></tr><tr><td>Team handbook</td><td>Sam Lee</td><td><span class="bc-badge bc-badge--accent">Active</span></td><td data-sort-value="2026-09-22">Sep 22</td></tr><tr data-bc-table-empty hidden class="bc-table-empty"><td colspan="4">No matching projects.</td></tr></tbody></table></div><div class="bc-empty"><span class="bc-avatar bc-avatar--accent" aria-hidden="true">+</span><h3 class="bc-h3">Nothing here yet</h3><p>Start something new and it will show up here.</p><button class="bc-button bc-button--primary" type="button" data-open-dialog>Create a project</button></div></div><pre><code>&lt;script src="business-casual-table.js" defer&gt;&lt;/script&gt;
+&lt;input type="search" data-bc-table-search="projects" aria-label="Search projects"&gt;
+&lt;table id="projects" class="bc-table" data-bc-table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th scope="col"&gt;
+    &lt;button class="bc-table-sort" type="button"&gt;Name&lt;/button&gt;
+  &lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Example&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+&lt;/table&gt;</code></pre></section>
+
+      <section id="dialog" class="gallery-section"><div class="section-title"><div><span class="bc-eyebrow">06 / Focus</span><h2 class="bc-h2">Dialog</h2></div><code>bc-dialog</code></div><div class="sample"><p class="bc-muted">Use the native <code>&lt;dialog&gt;</code> element for focus management and Escape-to-close. Open it with <code>dialog.showModal()</code>.</p><button class="bc-button bc-button--primary dialog-demo-button" type="button" data-open-dialog>Open dialog</button></div><pre><code>&lt;dialog class="bc-dialog" id="example-dialog"&gt;
+  &lt;h2 class="bc-h2"&gt;New project&lt;/h2&gt;
+  &lt;form method="dialog"&gt;
+    &lt;button class="bc-button"&gt;Close&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/dialog&gt;
+&lt;script&gt;document.querySelector('#example-dialog').showModal()&lt;/script&gt;</code></pre></section>
+      <footer class="gallery-footer bc-caption">Built to be copied, adapted, and made your own. <a class="bc-link" href="index.html">Back to dashboard →</a></footer>
+    </main>
+  </div>
+  <dialog class="bc-dialog" id="example-dialog" aria-labelledby="example-title"><div class="bc-dialog-header"><h2 class="bc-h2" id="example-title">New project</h2><form method="dialog"><button class="bc-button bc-button--quiet" aria-label="Close dialog" type="submit">✕</button></form></div><p class="bc-muted dialog-copy">This is a native dialog using the reusable theme classes.</p><form method="dialog"><label class="bc-field"><span class="bc-label">Project name</span><input class="bc-input" placeholder="Your next big idea"></label><div class="bc-dialog-actions"><button class="bc-button" type="submit">Cancel</button><button class="bc-button bc-button--primary" type="submit">Create</button></div></form></dialog>
+</body>
+</html>

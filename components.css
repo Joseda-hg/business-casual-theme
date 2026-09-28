@@ -1,0 +1,44 @@
+/* Gallery layout only. None of these rules are required by the component kit. */
+body.bc { margin: 0; min-width: 320px; }
+.gallery-header { position: sticky; top: 0; z-index: 3; display: flex; justify-content: space-between; align-items: center; gap: 16px; height: 66px; padding: 0 clamp(20px, 5vw, 72px); border-bottom: 1px solid var(--bc-border); background: var(--bc-surface); }
+.gallery-brand { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 720; letter-spacing: -.02em; white-space: nowrap; }
+.gallery-mark { display: grid; place-items: center; width: 28px; height: 28px; padding-right: 2px; border-radius: 8px; background: var(--bc-text); color: var(--bc-surface); font-size: 16px; }
+.gallery-brand .bc-badge { margin-left: 4px; letter-spacing: 0; }
+.gallery-actions { display: flex; gap: 8px; }
+.gallery-shell { display: grid; grid-template-columns: 190px minmax(0, 850px); gap: clamp(28px, 6vw, 92px); max-width: 1370px; margin: auto; padding: 60px clamp(20px, 5vw, 72px) 100px; }
+.gallery-nav { position: sticky; top: 110px; align-self: start; display: grid; gap: 3px; }
+.gallery-nav .bc-eyebrow { margin: 17px 0 5px; }
+.gallery-nav .bc-eyebrow:first-child { margin-top: 0; }
+.gallery-nav a { padding: 7px 10px; border-radius: var(--bc-radius-sm); color: var(--bc-text-secondary); font-size: 12px; }
+.gallery-nav a:hover { background: var(--bc-surface-hover); color: var(--bc-text); }
+.gallery-main { min-width: 0; }
+.gallery-intro { padding: 14px 0 65px; }
+.gallery-intro .bc-h1 { margin: 13px 0 12px; }
+.gallery-intro > .bc-muted { max-width: 580px; font-size: 15px; }
+.intro-links { display: flex; gap: 9px; margin: 25px 0 30px; }
+.gallery-section { padding: 42px 0 52px; border-top: 1px solid var(--bc-border); scroll-margin-top: 80px; }
+.section-title { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 21px; }
+.section-title .bc-eyebrow { display: block; margin-bottom: 6px; }
+.section-title code { color: var(--bc-text-tertiary); font-size: 11px; }
+.sample { padding: clamp(18px, 3vw, 28px) 0; background: transparent; }
+.sample-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.sample > .bc-caption { margin-top: 20px; }
+.gallery-main pre { margin: 10px 0 0; padding: 17px 20px; overflow-x: auto; border: 0; border-radius: var(--bc-radius); background: var(--bc-surface-muted); color: var(--bc-text-secondary); font: 12px/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.gallery-main code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.full-width { grid-column: 1 / -1; }
+.form-options { margin-top: 25px; gap: 14px 24px; }
+.surface-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.sample-card { display: flex; flex-direction: column; align-items: flex-start; min-height: 185px; padding: 21px; }
+.sample-card h3 { margin: 15px 0 4px; }
+.sample-card p { font-size: 12px; }
+.sample-card > :last-child { margin-top: auto; padding-top: 14px; }
+.alert-stack { display: grid; gap: 10px; margin-top: 18px; }
+.tab-content { padding: 20px 0; color: var(--bc-text-secondary); font-size: 13px; }
+.tab-content[hidden] { display: none; }
+.sample .bc-empty { margin-top: 20px; }
+.dialog-demo-button { margin-top: 16px; }
+.dialog-copy { margin: 10px 0 22px !important; font-size: 13px; }
+.gallery-footer { padding-top: 25px; border-top: 1px solid var(--bc-border); }
+@media (max-width: 820px) { .gallery-shell { grid-template-columns: 1fr; padding-top: 35px; } .gallery-nav { position: static; display: flex; flex-wrap: wrap; gap: 4px; } .gallery-nav .bc-eyebrow { display: none; } .gallery-nav a { padding: 5px 8px; } }
+@media (max-width: 540px) { .gallery-header { padding: 0 16px; } .gallery-brand .bc-badge, .gallery-actions a { display: none; } #gallery-font { width: 36px; padding: 0; font-size: 0; } #gallery-font::after { content: "Aa"; font-size: 13px; } .gallery-shell { padding: 20px 16px 70px; gap: 20px; } .gallery-intro { padding-bottom: 32px; } .form-grid, .surface-grid { grid-template-columns: 1fr; } .section-title code { display: none; } .sample { padding: 18px; } }

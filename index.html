@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23191b20'/%3E%3Ctext x='12' y='47' font-family='Arial' font-size='44' font-weight='bold' fill='white'%3Eb.%3C/text%3E%3C/svg%3E">
+  <title>Business Casual — a quiet interface theme</title>
+  <link rel="stylesheet" href="styles/business-casual.css">
+  <link rel="stylesheet" href="styles/business-casual-manrope.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body class="bc">
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2zM16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16l4-5 3 2 5-7"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M10 2h4l.6 2.5 2 1.1 2.5-.7 2 3.5-1.9 1.8v2.3l1.9 1.8-2 3.5-2.5-.7-2 1.1L14 21h-4l-.6-2.5-2-1.1-2.5.7-2-3.5 1.9-1.8v-2.3L2.9 8.7l2-3.5 2.5.7 2-1.1z" transform="translate(0 1) scale(.92)"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2.5-2.5 4M12 17h.01"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v6h5M9 13h7m-7 4h7"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <div class="app" id="app">
+    <button class="sidebar-backdrop" id="sidebar-backdrop" aria-label="Close navigation"></button>
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#overview"><span class="brand-mark">b.</span><span>business casual</span></a>
+      <div class="sidebar-space"><p class="bc-eyebrow nav-label">Workspace</p>
+        <nav class="sidebar-nav" aria-label="Workspace">
+          <a class="bc-nav-item" href="#overview" aria-current="page"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Overview</a>
+          <a class="bc-nav-item" href="#workspaces"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-folder"/></svg>Workspaces</a>
+          <a class="bc-nav-item" href="#activity"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chart"/></svg>Activity</a>
+          <a class="bc-nav-item" href="#appearance"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-settings"/></svg>Appearance</a>
+        </nav>
+      </div>
+      <hr class="bc-divider sidebar-divider">
+      <p class="bc-eyebrow nav-label">Your space</p>
+      <nav class="sidebar-nav" aria-label="Quick links">
+        <a class="bc-nav-item" href="#workspaces"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg>Projects</a>
+        <a class="bc-nav-item" href="#activity"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg>Team updates</a>
+      </nav>
+      <div class="sidebar-bottom"><hr class="bc-divider sidebar-divider">
+        <a class="bc-nav-item" href="components.html"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg>Components <svg style="margin-left:auto;width:14px;height:14px" fill="none" stroke="currentColor"><use href="#i-arrow"/></svg></a>
+        <div class="sidebar-profile"><span class="bc-avatar bc-avatar--accent">AC</span><span><strong>Alex Carter</strong><small>Personal workspace</small></span></div>
+      </div>
+    </aside>
+
+    <main class="main" id="overview">
+      <header class="topbar">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button class="bc-button bc-button--quiet bc-button--icon mobile-menu" id="menu-toggle" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><svg fill="none" stroke="currentColor" stroke-linecap="round"><use href="#i-menu"/></svg></button>
+          <div class="breadcrumbs"><span>Workspace</span><svg width="13" height="13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chevron"/></svg><strong>Overview</strong></div>
+        </div>
+        <div class="top-actions"><a class="bc-button bc-button--quiet topbar-help" href="components.html"><svg fill="none" stroke="currentColor" stroke-linecap="round"><use href="#i-help"/></svg> Components</a><button class="bc-button bc-button--quiet bc-button--icon" id="font-toggle" type="button" title="Switch font" aria-label="Switch to Manrope font">Aa</button><button class="bc-button bc-button--quiet bc-button--icon" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode"><svg fill="none" stroke="currentColor" stroke-linecap="round"><use href="#i-moon"/></svg></button><span class="bc-avatar bc-avatar--accent" aria-label="Alex Carter">AC</span></div>
+      </header>
+
+      <div class="content">
+        <section class="intro" aria-labelledby="page-title"><div><p class="bc-eyebrow">Friday, September 25, 2026</p><h1 class="bc-h1" id="page-title">Good morning, Alex.</h1><p class="bc-muted">A clearer view of everything you're working on.</p></div><div class="intro-actions"><a class="bc-button" href="#workspaces">View workspaces <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a><button class="bc-button bc-button--primary" id="new-workspace"><svg fill="none" stroke="currentColor" stroke-linecap="round"><use href="#i-plus"/></svg> New workspace</button></div></section>
+
+        <section aria-label="At a glance" class="overview-grid">
+          <article class="bc-card stat"><div class="stat-top"><span class="bc-caption">Total workspaces</span><span class="stat-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg></span></div><p class="stat-number" id="workspace-count">06</p><p class="stat-bottom"><strong>↑ 2 new</strong> this month</p></article>
+          <article class="bc-card stat"><div class="stat-top"><span class="bc-caption">Active projects</span><span class="stat-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-folder"/></svg></span></div><p class="stat-number">18</p><p class="stat-bottom"><strong>↑ 12%</strong> from last month</p></article>
+          <article class="bc-card stat"><div class="stat-top"><span class="bc-caption">Team members</span><span class="stat-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg></span></div><p class="stat-number">24</p><p class="stat-bottom">Across all workspaces</p></article>
+          <article class="bc-card stat"><div class="stat-top"><span class="bc-caption">Tasks completed</span><span class="stat-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-spark"/></svg></span></div><p class="stat-number">128</p><p class="stat-bottom"><strong>↑ 18%</strong> from last month</p></article>
+        </section>
+
+        <section id="workspaces" aria-labelledby="workspace-title">
+          <div class="section-heading"><div><h2 class="bc-h2" id="workspace-title">Your workspaces</h2><p class="bc-muted">Everything in its place.</p></div><a class="bc-link" href="#workspaces">Explore all <span aria-hidden="true">→</span></a></div>
+          <div class="bc-tabs" role="tablist" aria-label="Filter workspaces"><button class="bc-tab" role="tab" aria-selected="true" data-filter="all">All workspaces</button><button class="bc-tab" role="tab" aria-selected="false" data-filter="active">Active</button><button class="bc-tab" role="tab" aria-selected="false" data-filter="archived">Archived</button></div>
+          <div style="max-width:340px;margin:20px 0"><label class="bc-search"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-search"/></svg><input class="bc-input" id="workspace-search" type="search" placeholder="Search workspaces" aria-label="Search workspaces"></label></div>
+          <div class="workspace-grid" id="workspace-grid">
+            <article class="bc-card workspace-card" data-status="active" data-name="Design Studio"><div class="workspace-top"><span class="workspace-icon"><svg fill="none" stroke="currentColor" stroke-linejoin="round"><use href="#i-spark"/></svg></span><span class="bc-badge bc-badge--accent"><span class="bc-dot"></span> Active</span></div><h3 class="bc-h3">Design Studio</h3><p>Brand assets, design systems, and everything in between.</p><div class="workspace-footer"><span class="avatar-stack"><span class="bc-avatar">JD</span><span class="bc-avatar bc-avatar--accent">MK</span><span class="bc-avatar">+4</span></span><span class="bc-caption">8 projects</span></div></article>
+            <article class="bc-card workspace-card" data-status="active" data-name="Product & Engineering"><div class="workspace-top"><span class="workspace-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg></span><span class="bc-badge bc-badge--accent"><span class="bc-dot"></span> Active</span></div><h3 class="bc-h3">Product & Engineering</h3><p>Ideas to build, shipped with care and purpose.</p><div class="workspace-footer"><span class="avatar-stack"><span class="bc-avatar bc-avatar--accent">AL</span><span class="bc-avatar">SY</span><span class="bc-avatar">+6</span></span><span class="bc-caption">12 projects</span></div></article>
+            <article class="bc-card workspace-card" data-status="active" data-name="Marketing Hub"><div class="workspace-top"><span class="workspace-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-globe"/></svg></span><span class="bc-badge bc-badge--accent"><span class="bc-dot"></span> Active</span></div><h3 class="bc-h3">Marketing Hub</h3><p>Campaigns, stories, and the people they reach.</p><div class="workspace-footer"><span class="avatar-stack"><span class="bc-avatar">RS</span><span class="bc-avatar bc-avatar--accent">TW</span><span class="bc-avatar">+3</span></span><span class="bc-caption">6 projects</span></div></article>
+            <article class="bc-card workspace-card" data-status="active" data-name="Operations"><div class="workspace-top"><span class="workspace-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chart"/></svg></span><span class="bc-badge bc-badge--accent"><span class="bc-dot"></span> Active</span></div><h3 class="bc-h3">Operations</h3><p>Making the everyday run a little more smoothly.</p><div class="workspace-footer"><span class="avatar-stack"><span class="bc-avatar">KP</span><span class="bc-avatar bc-avatar--accent">AC</span></span><span class="bc-caption">4 projects</span></div></article>
+            <article class="bc-card workspace-card" data-status="archived" data-name="Q2 Planning"><div class="workspace-top"><span class="workspace-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></span><span class="bc-badge">Archived</span></div><h3 class="bc-h3">Q2 Planning</h3><p>A home for goals, milestones, and what we learned.</p><div class="workspace-footer"><span class="avatar-stack"><span class="bc-avatar">JD</span><span class="bc-avatar">SY</span></span><span class="bc-caption">3 projects</span></div></article>
+            <article class="bc-card workspace-card" data-status="archived" data-name="Brand Refresh"><div class="workspace-top"><span class="workspace-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#i-lock"/></svg></span><span class="bc-badge">Archived</span></div><h3 class="bc-h3">Brand Refresh</h3><p>Where our next chapter first came together.</p><div class="workspace-footer"><span class="avatar-stack"><span class="bc-avatar bc-avatar--accent">MK</span><span class="bc-avatar">RS</span></span><span class="bc-caption">5 projects</span></div></article>
+          </div>
+          <p class="empty-state" id="empty-state" hidden>No workspaces match your search.</p>
+        </section>
+
+        <div class="lower-grid">
+          <section class="bc-card activity-panel" id="activity" aria-labelledby="activity-title"><div class="panel-heading"><div><h2 class="bc-h2" id="activity-title">Recent activity</h2><p class="bc-muted">A little of what's been happening.</p></div><span class="bc-badge">This week</span></div>
+            <div class="activity-item"><span class="activity-symbol"><svg fill="none" stroke="currentColor" stroke-linecap="round"><use href="#i-file"/></svg></span><div class="activity-copy"><strong>New brand guidelines uploaded</strong><p class="bc-muted">Maya in Design Studio</p></div><time class="activity-time">2h ago</time></div>
+            <div class="activity-item"><span class="activity-symbol"><svg fill="none" stroke="currentColor" stroke-linecap="round"><use href="#i-users"/></svg></span><div class="activity-copy"><strong>Sam joined the team</strong><p class="bc-muted">Product & Engineering</p></div><time class="activity-time">Yesterday</time></div>
+            <div class="activity-item"><span class="activity-symbol"><svg fill="none" stroke="currentColor" stroke-linecap="round"><use href="#i-spark"/></svg></span><div class="activity-copy"><strong>Campaign launch approved</strong><p class="bc-muted">Marketing Hub</p></div><time class="activity-time">Sep 22</time></div>
+          </section>
+          <section class="bc-card appearance-panel" id="appearance" aria-labelledby="appearance-title"><div class="panel-heading"><div><h2 class="bc-h2" id="appearance-title">Make it yours</h2><p class="bc-muted">A small palette. A lot of possibility.</p></div></div><span class="control-label">Appearance</span><div class="bc-segmented" role="group" aria-label="Appearance"><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button><button type="button" data-theme-choice="system" aria-pressed="true">System</button></div><hr class="bc-divider"><span class="control-label">Accent color</span><div class="swatches" role="group" aria-label="Accent color"><button class="swatch" data-accent="blue" aria-label="Blue accent" aria-pressed="false" style="--swatch:#0066cc"><span></span></button><button class="swatch" data-accent="violet" aria-label="Violet accent" aria-pressed="false" style="--swatch:#7958ce"><span></span></button><button class="swatch" data-accent="green" aria-label="Green accent" aria-pressed="false" style="--swatch:#168465"><span></span></button><button class="swatch" data-accent="orange" aria-label="Orange accent" aria-pressed="false" style="--swatch:#be6830"><span></span></button><button class="swatch" data-accent="graphite" aria-label="Graphite accent" aria-pressed="true" style="--swatch:#414145"><span></span></button></div><p class="appearance-note">One accent at a time. The rest stays out of your way. Your preferences are saved in this browser.</p></section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="workspace-dialog" class="bc-dialog create-dialog"><form method="dialog" id="workspace-form"><div class="bc-dialog-header"><h2 class="bc-h2">New workspace</h2><button class="bc-button bc-button--quiet bc-button--icon" type="submit" value="cancel" formnovalidate aria-label="Close"><svg fill="none" stroke="currentColor" stroke-linecap="round"><use href="#i-close"/></svg></button></div><p class="bc-muted">Make room for something new.</p><label class="bc-field"><span class="bc-label">Workspace name</span><input class="bc-input" name="name" maxlength="50" required placeholder="e.g. Creative projects"></label><label class="bc-field"><span class="bc-label">Description</span><input class="bc-input" name="description" maxlength="120" placeholder="What is this space for?"></label><div class="bc-dialog-actions"><button class="bc-button" type="submit" value="cancel" formnovalidate>Cancel</button><button class="bc-button bc-button--primary" type="submit" value="create">Create workspace</button></div></form></dialog>
+</body>
+</html>

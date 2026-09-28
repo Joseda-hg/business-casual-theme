@@ -1,0 +1,67 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - name: Install npm CLI with OIDC support
+        run: npm install --global npm@11
+      - name: Verify tag matches package version
+        shell: bash
+        run: |
+          package_version="$(node -p "require('./package.json').version")"
+          expected_tag="v${package_version}"
+          if [[ "$GITHUB_REF_NAME" != "$expected_tag" ]]; then
+            echo "Tag $GITHUB_REF_NAME does not match package version $package_version (expected $expected_tag)." >&2
+            exit 1
+          fi
+      - name: Install dependencies
+        run: npm ci
+      - name: Test
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Archive distribution
+        run: zip -r "business-casual-theme-${GITHUB_REF_NAME}.zip" dist
+      - name: Check whether this version is already on npm
+        id: npm_version
+        shell: bash
+        run: |
+          package_version="$(node -p "require('./package.json').version")"
+          if npm view "business-casual-theme@${package_version}" version >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+      # npm trusted publishing must be enabled for this package on npmjs.com,
+      # using this GitHub repository and the "Release" workflow. No npm token
+      # is used; npm CLI 11 supports OIDC trusted publishing.
+      - name: Publish to npm with provenance
+        if: steps.npm_version.outputs.exists == 'false'
+        run: npm publish --provenance --access public
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "business-casual-theme-${GITHUB_REF_NAME}.zip" --generate-notes
